@@ -5,11 +5,17 @@ let currentWord = "";
 let letter = "";
 
 
+// const stop = function() {
+//   if (count === sentence.length -1) {
+//   break;
+//   }
+// };
+
 const stop = function() {
-  if (count === sentence.length -1) {
-  break;
+  if (timer) {
+    clearTimeout(timer);
   }
-};
+}
 
 const type = function() {
 
@@ -20,11 +26,14 @@ const type = function() {
   process.stdout.write(letter);
   if (letter.length === currentWord.length) {
     count += 1;
-    index =0;
-    stop;
+    index = 0;
+    
   }
-
-   setTimeout(type, 50); 
+  if (count === sentence.length) {
+    process.stdout.write('\n');
+    clearTimeout(type);
+  }
+   const timer = setTimeout(type, 50); 
 };
 
   console.log(type(sentence));
