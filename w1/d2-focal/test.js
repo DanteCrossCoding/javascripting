@@ -1,14 +1,15 @@
-const findWaldo = function(names, found) {
-  for (let i = 0; i < names.length; i++) {
-    let name = names[i];
-    if (name === "Waldo") {
-      found();   // execute callback
+
+const removeSpace = function(s) {
+  let newString = s;
+  for (let i = 0; i < newString.length; i++) {
+    noSpace = newString.replace(" ", "");
+      
     }
-  }
-}
+   return noSpace;
+  
+};
 
-const actionWhenFound = function() {
-  console.log("Found him!");
-}
 
-findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
+
+const string = "a man a plan a canal panama";
+console.log(removeSpace(string));
