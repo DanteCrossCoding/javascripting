@@ -11,12 +11,6 @@ let letter = "";
 //   }
 // };
 
-const stop = function() {
-  if (timer) {
-    clearTimeout(timer);
-  }
-}
-
 const type = function() {
 
  
